@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C Language Codes</title>
+  
+    <style>
+      body {
+        background: linear-gradient(135deg, #123524, #0A4B3E, #123524);
+        color: #f3f4f6;
+        min-height: 100vh;
+        margin: 0;
+        font-family: system-ui;
+      }
+
+      header {
+        background: linear-gradient(to right, #0A2E1F, #0A4B3E);
+        padding: 2rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: white;
+        margin: 0;
+      }
+
+      .subtitle {
+        color: #6ee7b7;
+        margin-top: 0.5rem;
+      }
+
+      main {
+        padding: 2rem 0;
+      }
+
+      .code-block {
+        background: black;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        height: 12rem;
+        font-family: 'Courier New', monospace;
+        font-size: 0.875rem;
+        color: #4ade80;
+        overflow: auto;
+      }
+
+      .section-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #6ee7b7;
+        margin-bottom: 1rem;
+      }
+
+      .questions-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #6ee7b7;
+        margin-bottom: 1.5rem;
+      }
+
+      .topic-card {
+        background: #0A2E1F;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .topic-card:hover {
+        background: #0A4B3E;
+      }
+
+      .topic-title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #6ee7b7;
+        margin-bottom: 0.75rem;
+      }
+
+      .topic-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: #d1d5db;
+      }
+
+      .topic-list li {
+        margin: 0.5rem 0;
+        padding-left: 1rem;
+        position: relative;
+      }
+
+      .topic-list li::before {
+        content: "•";
+        color: #6ee7b7;
+        position: absolute;
+        left: 0;
+      }
+
+      pre {
+        margin: 0;
+        
+      }
+
+      .code-section {
+        margin-bottom: 3rem;
+      }
+
+      .space-y-4 > * + * {
+        margin-top: 1rem;
+      }
+
+      .topic-group {
+        margin-bottom: 2rem;
+      }
+
+      .code-output-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .code-output-title {
+        color: #6ee7b7;
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>C Language Codes</h1>
+      
+      </div>
+    </header>
+
+    <main class="container">
+      <h2 class="questions-title">Questions</h2>
+      <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Pre-processor Directives -->
+        <div class="topic-group">
+          <div class="topic-card">
+            <h3 class="topic-title">Pre-processor Directives</h3>
+            <ul class="topic-list">
+              <li>Macros</li>
+              <li>File Inclusion</li>
+              <li>Conditional Compilation</li>
+              <li>Other directives</li>
+            </ul>
+          </div>
+          <div class="code-output-section">
+            <div>
+              <div class="code-output-title">Code Example</div>
+              <div class="code-block">
+                <pre>#define MAX 100
+#define SQUARE(x) ((x)*(x))
+
+#include &lt;stdio.h&gt;
+
+#ifdef DEBUG
+  #define LOG(msg) printf(msg)
+#else
+  #define LOG(msg)
+#endif</pre>
+              </div>
+            </div>
+            <div>
+              <div class="code-output-title">Output</div>
+              <div class="code-block">
+                <pre>Value of MAX: 100
+SQUARE(5) = 25
+Debug message logged
+Conditional compilation complete</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Types of Tokens -->
+        <div class="topic-group">
+          <div class="topic-card">
+            <h3 class="topic-title">Types of Tokens</h3>
+            <ul class="topic-list">
+              <li>Keywords</li>
+              <li>Identifiers</li>
+              <li>Constants</li>
+              <li>Strings</li>
+              <li>Special Symbols</li>
+              <li>Operators</li>
+            </ul>
+          </div>
+          <div class="code-output-section">
+            <div>
+              <div class="code-output-title">Code Example</div>
+              <div class="code-block">
+                <pre>int main() {
+    const double PI = 3.14159;
+    char *message = "Hello";
+    int sum = 10 + 20;
+    if (sum > 0) {
+        return 1;
+    }
+    return 0;
+}</pre>
+              </div>
+            </div>
+            <div>
+              <div class="code-output-title">Token Analysis</div>
+              <div class="code-block">
+                <pre>Keywords: int, const, char, if, return
+Identifiers: main, PI, message, sum
+Constants: 3.14159, "Hello", 10, 20, 0, 1
+Operators: =, +, >
+Special Symbols: (), {}, *</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input/Output Functions -->
+        <div class="topic-group">
+          <div class="topic-card">
+            <h3 class="topic-title">Input/Output Functions</h3>
+            <ul class="topic-list">
+              <li>Formatted I/O Functions (printf(), scanf())</li>
+              <li>Unformatted I/O Functions (putchar(), getchar(), puts(), gets())</li>
+            </ul>
+          </div>
+          <div class="code-output-section">
+            <div>
+              <div class="code-output-title">Code Example</div>
+              <div class="code-block">
+                <pre>#include &lt;stdio.h&gt;
+
+int main() {
+    char name[50];
+    int age;
+    
+    printf("Enter name: ");
+    gets(name);
+    
+    printf("Enter age: ");
+    scanf("%d", &age);
+    
+    printf("Hello, %s!\n", name);
+    printf("You are %d years old.\n", age);
+    return 0;
+}</pre>
+              </div>
+            </div>
+            <div>
+              <div class="code-output-title">Output</div>
+              <div class="code-block">
+                <pre>Enter name: John Doe
+Enter age: 25
+Hello, John Doe!
+You are 25 years old.</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Control Statements -->
+        <div class="topic-group">
+          <div class="topic-card">
+            <h3 class="topic-title">Control Statements</h3>
+            <ul class="topic-list">
+              <li>Switch case</li>
+              <li>Goto label</li>
+            </ul>
+          </div>
+          <div class="code-output-section">
+            <div>
+              <div class="code-output-title">Code Example</div>
+              <div class="code-block">
+                <pre>int main() {
+    int choice = 2;
+    
+    switch(choice) {
+        case 1:
+            printf("One");
+            break;
+        case 2:
+            printf("Two");
+            break;
+        default:
+            goto error;
+    }
+    return 0;
+
+error:
+    printf("Invalid choice");
+    return 1;
+}</pre>
+              </div>
+            </div>
+            <div>
+              <div class="code-output-title">Output</div>
+              <div class="code-block">
+                <pre>Two
+
+Process completed with exit code 0</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrays -->
+        <div class="topic-group">
+          <div class="topic-card">
+            <h3 class="topic-title">Arrays</h3>
+            <ul class="topic-list">
+              <li>One Dimensional Array</li>
+              <li>Two Dimensional Array</li>
+              <li>Array Operations (1D and 2D): +, -, *, /, transpose</li>
+            </ul>
+          </div>
+          <div class="code-output-section">
+            <div>
+              <div class="code-output-title">Code Example</div>
+              <div class="code-block">
+                <pre>int main() {
+    int arr1D[5] = {1, 2, 3, 4, 5};
+    int matrix[2][2] = {{1, 2}, {3, 4}};
+    int transpose[2][2];
+    
+    // Transpose
+    for(int i = 0; i < 2; i++)
+        for(int j = 0; j < 2; j++)
+            transpose[j][i] = matrix[i][j];
+}</pre>
+              </div>
+            </div>
+            <div>
+              <div class="code-output-title">Output</div>
+              <div class="code-block">
+                <pre>Original Matrix:
+1 2
+3 4
+
+Transposed Matrix:
+1 3
+2 4</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Patterns -->
+        <div class="topic-group">
+          <div class="topic-card">
+            <h3 class="topic-title">Patterns</h3>
+            <ul class="topic-list">
+              <li>Square</li>
+              <li>Rectangle</li>
+              <li>Right Pyramid</li>
+              <li>Inverse Right Pyramid</li>
+            </ul>
+          </div>
+          <div class="code-output-section">
+            <div>
+              <div class="code-output-title">Code Example</div>
+              <div class="code-block">
+                <pre>void printPyramid(int n) {
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+}</pre>
+              </div>
+            </div>
+            <div>
+              <div class="code-output-title">Output</div>
+              <div class="code-block">
+                <pre>* 
+* * 
+* * * 
+* * * * 
+* * * * *</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- String Functions -->
+        <div class="topic-group">
+          <div class="topic-card">
+            <h3 class="topic-title">String Functions</h3>
+            <ul class="topic-list">
+              <li>strlen()</li>
+              <li>strlwr()</li>
+              <li>strupr()</li>
+              <li>strcpy()</li>
+              <li>strcmp()</li>
+              <li>strcat()</li>
+              <li>strcpncat()</li>
+            </ul>
+          </div>
+          <div class="code-output-section">
+            <div>
+              <div class="code-output-title">Code Example</div>
+              <div class="code-block">
+                <pre>
+                  #include &lt;stdio.h&gt;
+                  #include &lt;string.h&gt;
+                  
+                    
+                    int main() {
+                        char str1[] = "Hello, World!";
+                        printf("Length of string \"%s\": %zu\n", str1, strlen(str1));
+                    
+                        char str2[] = "HELLO";
+                        for (int i = 0; str2[i]; i++) {
+                            str2[i] = tolower(str2[i]);
+                        }
+                        printf("Lowercase string: %s\n", str2);
+                    
+                        char str3[] = "world";
+                        for (int i = 0; str3[i]; i++) {
+                            str3[i] = toupper(str3[i]);
+                        }
+                        printf("Uppercase string: %s\n", str3);
+                    
+                        char str4[50];
+                        strcpy(str4, "Copy this string");
+                        printf("Copied string: %s\n", str4);
+                    
+                        char str5[] = "apple";
+                        char str6[] = "banana";
+                        int result = strcmp(str5, str6);
+                        if (result < 0) {
+                            printf("\"%s\" is less than \"%s\"\n", str5, str6);
+                        } else if (result == 0) {
+                            printf("\"%s\" is equal to \"%s\"\n", str5, str6);
+                        } else {
+                            printf("\"%s\" is greater than \"%s\"\n", str5, str6);
+                        }
+                    
+                        char str7[50] = "Hello, ";
+                        char str8[] = "world!";
+                        strcat(str7, str8);
+                        printf("Concatenated string: %s\n", str7);
+                    
+                        char str9[50] = "Hello, ";
+                        char str10[] = "world! It's a nice day.";
+                        strncat(str9, str10, 5);
+                        printf("Concatenated with limit: %s\n", str9);
+                    
+                        return 0;
+                    }
+                    
+</pre>
+              </div>
+            </div>
+            <div>
+              <div class="code-output-title">Output</div>
+              <div class="code-block">
+                <pre> Length of string "Hello, World!": 13
+                  Lowercase string: hello
+                  Uppercase string: WORLD
+                  Copied string: Copy this string
+                  "apple" is less than "banana"
+                  Concatenated string: Hello, world!
+                  Concatenated with limit: Hello, world
+                  </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
