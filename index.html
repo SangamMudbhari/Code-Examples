@@ -107,8 +107,7 @@
 
       pre {
         margin: 0;
-        white-space: pre-wrap;
-        word-break: break-word;
+        
       }
 
       .code-section {
@@ -135,27 +134,7 @@
         font-size: 0.875rem;
         margin-bottom: 0.5rem;
       }
-
-      .grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      /* Media Queries */
-      @media (min-width: 768px) {
-        .grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (min-width: 1024px) {
-        .grid {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-
-      @media (max-width: 767px) {
+       @media (max-width: 767px) {
         h1 {
           font-size: 1.75rem;
         }
@@ -189,38 +168,19 @@
           padding: 1rem 0;
         }
       }
-
-      /* Improved scrollbar for code blocks */
-      .code-block::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-      }
-
-      .code-block::-webkit-scrollbar-track {
-        background: #0A2E1F;
-        border-radius: 4px;
-      }
-
-      .code-block::-webkit-scrollbar-thumb {
-        background: #6ee7b7;
-        border-radius: 4px;
-      }
-
-      .code-block::-webkit-scrollbar-thumb:hover {
-        background: #4ade80;
-      }
     </style>
   </head>
   <body>
     <header>
       <div class="container">
         <h1>C Language Codes</h1>
+      
       </div>
     </header>
 
     <main class="container">
       <h2 class="questions-title">Questions</h2>
-      <div class="grid">
+      <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
         <!-- Pre-processor Directives -->
         <div class="topic-group">
           <div class="topic-card">
@@ -486,64 +446,69 @@ Transposed Matrix:
             <div>
               <div class="code-output-title">Code Example</div>
               <div class="code-block">
-                <pre>#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
+                <pre>
+                  #include &lt;stdio.h&gt;
+                  #include &lt;string.h&gt;
                   
-int main() {
-    char str1[] = "Hello, World!";
-    printf("Length of string \"%s\": %zu\n", str1, strlen(str1));
-
-    char str2[] = "HELLO";
-    for (int i = 0; str2[i]; i++) {
-        str2[i] = tolower(str2[i]);
-    }
-    printf("Lowercase string: %s\n", str2);
-
-    char str3[] = "world";
-    for (int i = 0; str3[i]; i++) {
-        str3[i] = toupper(str3[i]);
-    }
-    printf("Uppercase string: %s\n", str3);
-
-    char str4[50];
-    strcpy(str4, "Copy this string");
-    printf("Copied string: %s\n", str4);
-
-    char str5[] = "apple";
-    char str6[] = "banana";
-    int result = strcmp(str5, str6);
-    if (result < 0) {
-        printf("\"%s\" is less than \"%s\"\n", str5, str6);
-    } else if (result == 0) {
-        printf("\"%s\" is equal to \"%s\"\n", str5, str6);
-    } else {
-        printf("\"%s\" is greater than \"%s\"\n", str5, str6);
-    }
-
-    char str7[50] = "Hello, ";
-    char str8[] = "world!";
-    strcat(str7, str8);
-    printf("Concatenated string: %s\n", str7);
-
-    char str9[50] = "Hello, ";
-    char str10[] = "world! It's a nice day.";
-    strncat(str9, str10, 5);
-    printf("Concatenated with limit: %s\n", str9);
-
-    return 0;
-}</pre>
+                    
+                    int main() {
+                        char str1[] = "Hello, World!";
+                        printf("Length of string \"%s\": %zu\n", str1, strlen(str1));
+                    
+                        char str2[] = "HELLO";
+                        for (int i = 0; str2[i]; i++) {
+                            str2[i] = tolower(str2[i]);
+                        }
+                        printf("Lowercase string: %s\n", str2);
+                    
+                        char str3[] = "world";
+                        for (int i = 0; str3[i]; i++) {
+                            str3[i] = toupper(str3[i]);
+                        }
+                        printf("Uppercase string: %s\n", str3);
+                    
+                        char str4[50];
+                        strcpy(str4, "Copy this string");
+                        printf("Copied string: %s\n", str4);
+                    
+                        char str5[] = "apple";
+                        char str6[] = "banana";
+                        int result = strcmp(str5, str6);
+                        if (result < 0) {
+                            printf("\"%s\" is less than \"%s\"\n", str5, str6);
+                        } else if (result == 0) {
+                            printf("\"%s\" is equal to \"%s\"\n", str5, str6);
+                        } else {
+                            printf("\"%s\" is greater than \"%s\"\n", str5, str6);
+                        }
+                    
+                        char str7[50] = "Hello, ";
+                        char str8[] = "world!";
+                        strcat(str7, str8);
+                        printf("Concatenated string: %s\n", str7);
+                    
+                        char str9[50] = "Hello, ";
+                        char str10[] = "world! It's a nice day.";
+                        strncat(str9, str10, 5);
+                        printf("Concatenated with limit: %s\n", str9);
+                    
+                        return 0;
+                    }
+                    
+</pre>
               </div>
             </div>
             <div>
               <div class="code-output-title">Output</div>
               <div class="code-block">
-                <pre>Length of string "Hello, World!": 13
-Lowercase string: hello
-Uppercase string: WORLD
-Copied string: Copy this string
-"apple" is less than "banana"
-Concatenated string: Hello, world!
-Concatenated with limit: Hello, world</pre>
+                <pre> Length of string "Hello, World!": 13
+                  Lowercase string: hello
+                  Uppercase string: WORLD
+                  Copied string: Copy this string
+                  "apple" is less than "banana"
+                  Concatenated string: Hello, world!
+                  Concatenated with limit: Hello, world
+                  </pre>
               </div>
             </div>
           </div>
